@@ -1,0 +1,132 @@
+import {
+  BiLinkExternal,
+  BiLogoCodepen,
+  BiLogoDribbble,
+  BiLogoGithub,
+  BiLogoGitlab,
+  BiLogoInstagram,
+  BiLogoLinkedinSquare,
+  BiLogoStackOverflow,
+  BiLogoSteam,
+  BiLogoUnsplash,
+  BiLogoYoutube,
+} from "react-icons/bi";
+import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
+import { SiCodewars } from "react-icons/si";
+import { FaHashnode, FaSquareXTwitter } from "react-icons/fa6";
+import type { SocialType } from "@/types";
+
+export const socialLinks: SocialType[] = [
+  {
+    id: 1,
+    name: "GitHub",
+    url: "https://github.com/tuusuario",
+    icon: BiLogoGithub,
+    status: "social",
+  },
+  {
+    id: 2,
+    name: "X",
+    url: "https://twitter.com/tuusuario",
+    icon: FaSquareXTwitter,
+    status: "social",
+  },
+  {
+    id: 3,
+    name: "Linkedin",
+    url: "https://linkedin.com/in/tuusuario",
+    icon: BiLogoLinkedinSquare,
+    status: "social",
+  },
+  {
+    id: 4,
+    name: "Codepen",
+    url: "https://codepen.io/tuusuario",
+    icon: BiLogoCodepen,
+    status: "social",
+  },
+  {
+    id: 5,
+    name: "Dribbble",
+    url: "https://dribbble.com/tuusuario",
+    icon: BiLogoDribbble,
+    status: "social",
+  },
+  {
+    id: 6,
+    name: "Instagram",
+    url: "https://instagram.com/tuusuario",
+    icon: BiLogoInstagram,
+    status: "social",
+  },
+  {
+    id: 7,
+    name: "Steam",
+    url: "https://steamcommunity.com/id/tuusuario/",
+    icon: BiLogoSteam,
+    status: "social",
+  },
+  {
+    id: 8,
+    name: "Unsplash",
+    url: "https://unsplash.com/@tuusuario",
+    icon: BiLogoUnsplash,
+    status: "social",
+  },
+  {
+    id: 9,
+    name: "FreeCodeCamp",
+    url: "https://freecodecamp.org/news/author/tuusuario/",
+    icon: FaFreeCodeCamp,
+    status: "publication",
+  },
+  {
+    id: 10,
+    name: "Hashnode",
+    url: "https://tuusername.hashnode.dev",
+    icon: FaHashnode,
+    status: "publication",
+  },
+  {
+    id: 11,
+    name: "Youtube",
+    url: "https://youtube.com/@tuusuario",
+    icon: BiLogoYoutube,
+    status: "social",
+  },
+  {
+    id: 12,
+    name: "Daily.dev",
+    url: "https://app.daily.dev/tuusuario",
+    icon: BiLinkExternal,
+    status: "social",
+  },
+  {
+    id: 13,
+    name: "Producthunt",
+    url: "https://www.producthunt.com/@tuusuario",
+    icon: FaProductHunt,
+    status: "social",
+  },
+  {
+    id: 14,
+    name: "Stackoverflow",
+    url: "https://stackoverflow.com/users/tuusuario",
+    icon: BiLogoStackOverflow,
+    status: "social",
+  },
+  {
+    id: 15,
+    name: "Codewars",
+    url: "https://www.codewars.com/users/tuusuario",
+    icon: SiCodewars,
+    status: "social",
+  },
+  {
+    id: 16,
+    name: "Gitlab",
+    url: "https://gitlab.com/tuusuario",
+    icon: BiLogoGitlab,
+    status: "social",
+  },
+];
