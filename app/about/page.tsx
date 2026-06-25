@@ -1,8 +1,8 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { BiEnvelope, BiLinkExternal, BiSolidDownload } from "react-icons/bi";
+import { BiEnvelope, BiSolidQuoteRight } from "react-icons/bi";
 import { Slide } from "@/app/animation/Slide";
-import RefLink from "@/app/components/shared/RefLink";
+import Usage from "@/app/components/pages/Usage";
 import { getProfile } from "@/lib/data";
 import { siteConfig } from "@/config/site";
 
@@ -28,12 +28,38 @@ export default async function About() {
           <Slide>
             <h1 className="font-incognito font-semibold tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2 mb-8">
               I&apos;m {profile.fullName}. I live in {profile.location}, where
-              I build the future.
+              I write code that works on my machine perfectly.
             </h1>
 
-            <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed whitespace-pre-line">
-              {profile.fullBio}
+            <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed">
+              {profile.fullBio
+                .split("\n\n")
+                .map((paragraph) => paragraph.trim())
+                .filter(Boolean)
+                .map((paragraph, index) => (
+                  <p key={index} className="mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
             </div>
+
+            <blockquote className="relative dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-xl p-6 mt-8">
+              <BiSolidQuoteRight
+                className="absolute top-4 right-4 text-4xl dark:text-zinc-700 text-zinc-300 opacity-50"
+                aria-hidden="true"
+              />
+              <p className="dark:text-zinc-300 text-zinc-600 leading-relaxed">
+                If you think my profile matches what you&apos;re looking for,
+                let&apos;s connect! I&apos;m always open to discussing new
+                opportunities, collaborating on projects, or simply geeking
+                out over backend architecture, AI advancements, and Linux.
+                Drop me a line—let&apos;s build something great together!📩
+              </p>
+            </blockquote>
+          </Slide>
+
+          <Slide delay={0.2} className="mt-16">
+            <Usage />
           </Slide>
         </div>
 
@@ -51,28 +77,9 @@ export default async function About() {
               />
 
               <div className="flex flex-col text-center gap-y-4">
-                <div className="flex items-center gap-x-3">
-                  <RefLink
-                    href={profile.resumeURL}
-                    className="flex items-center justify-center text-center gap-x-2 basis-[90%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-lg font-incognito font-semibold"
-                  >
-                    View Résumé <BiLinkExternal className="text-base" />
-                  </RefLink>
-                  <a
-                    href={`${profile.resumeURL}?dl=${profile.fullName}-resume.pdf`}
-                    className="flex items-center justify-center text-center dark:text-primary-color text-secondary-color hover:underline basis-[10%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-3 text-lg"
-                    title="Download Resume"
-                  >
-                    <BiSolidDownload
-                      className="text-lg"
-                      aria-label="Download Resume"
-                    />
-                  </a>
-                </div>
-
                 <a
                   href={`mailto:${profile.email}`}
-                  className="flex items-center gap-x-2 hover:text-primary-color"
+                  className="flex items-center justify-center gap-x-2 hover:text-primary-color"
                 >
                   <BiEnvelope className="text-lg" />
                   {profile.email}

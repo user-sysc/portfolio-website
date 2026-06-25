@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "Tu Nombre",
-  shortName: "Tu Nombre",
-  title: "Tu Nombre | Software Developer",
+  name: "Juliocrm",
+  shortName: "Juliocrm",
+  title: "Juliocrm | Software Developer",
   description:
-    "Tu Nombre is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
+    "Juliocrm is a Software Developer who is passionate about building solutions and contributing to open source communities",
   url: "https://tudominio.com",
   ogImage: "/og.png",
   locale: "en-US",
@@ -11,12 +11,11 @@ export const siteConfig = {
     "software developer",
     "portfolio",
     "web development",
-    "technical writer",
   ],
   links: {
-    github: "https://github.com/tuusuario",
-    linkedin: "https://linkedin.com/in/tuusuario",
-    twitter: "https://twitter.com/tuusuario",
+    github: "https://github.com/user-sysc",
+    linkedin: "https://linkedin.com/in/juliocrm-",
+    twitter: "https://x.com/Juliocrm_",
   },
 } as const;
 

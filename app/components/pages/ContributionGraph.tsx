@@ -1,30 +1,25 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
-import { GitHubCalendar } from "react-github-calendar";
 import { github } from "@/data/contribution-graph-theme";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import YearButton from "../shared/YearButton";
 import { getGitHubYears } from "@/app/utils/calculate-years";
 import EmptyState from "../shared/EmptyState";
 import { IoIosAnalytics } from "react-icons/io";
+
+const GitHubCalendar = dynamic(
+  () => import("react-github-calendar").then((module) => module.GitHubCalendar),
+  { ssr: false }
+);
 
 export default function ContributionGraph() {
   const [calendarYear, setCalendarYear] = useState<number | undefined>(
     undefined
   );
   const { theme, systemTheme } = useTheme();
-  const [serverTheme, setServerTheme] = useState<"light" | "dark" | undefined>(
-    undefined
-  );
   const scheme =
-    theme === "light" ? "light" : theme === "dark" ? "dark" : systemTheme;
-
-  useEffect(() => {
-    // Delay theme application until after hydration to avoid SSR/client mismatch
-    // when react-github-calendar reads colorScheme.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setServerTheme(scheme);
-  }, [scheme]);
+    (theme === "light" || theme === "dark" ? theme : systemTheme) ?? "light";
 
   const today = new Date().getFullYear();
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
@@ -46,7 +41,7 @@ export default function ContributionGraph() {
         <GitHubCalendar
           username={username}
           theme={github}
-          colorScheme={serverTheme}
+          colorScheme={scheme}
           blockSize={13}
           year={calendarYear}
         />

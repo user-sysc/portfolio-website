@@ -1,5 +1,5 @@
 import HeroSvg from "./assets/icons/HeroSvg";
-import Job from "./components/pages/Job";
+// import Job from "./components/pages/Job";
 import Social from "./components/shared/Social";
 import { Slide } from "./animation/Slide";
 import GithubCalendarComponent from "./components/pages/GithubCalendarComponent";
@@ -29,7 +29,8 @@ export default async function Home() {
         </Slide>
       </section>
       <GithubCalendarComponent />
-      <Job />
+      {/* Work Experience section temporarily disabled until content is available */}
+      {/* <Job /> */}
     </main>
   );
 }
