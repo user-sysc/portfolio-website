@@ -42,7 +42,7 @@ export default function EasterEgg({ isMet }: { isMet: boolean }) {
         src={funImage}
         width={250}
         height={250}
-        quality={100}
+        quality={75}
         alt="yeah right"
       />
     </>

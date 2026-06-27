@@ -24,7 +24,7 @@ export default function Theme() {
   return (
     <button
       onClick={toggleTheme}
-      className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-300 transition-transform ${
+      className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-300 transition-transform cursor-pointer ${
         currentTheme === "light" ? "-rotate-180" : "rotate-0"
       }`}
       aria-label="Toggle Theme"

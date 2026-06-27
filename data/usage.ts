@@ -39,6 +39,7 @@ export const usageData: UsageCategory[] = [
     slug: "tools",
     items: [
       { name: "Visual Studio Code", url: "https://code.visualstudio.com/", description: "Text Editor", separator: COLON },
+      { name: "OpenCode", url: "https://opencode.ai/", description: "AI Coding Agent", separator: COLON },
       { name: "Postman", url: "https://www.postman.com", description: "API Testing", separator: COLON },
       { name: "Firefox", url: "https://www.mozilla.org/en-US/firefox/new/", description: "Web Browser", separator: DASH },
       { name: "Google Chrome", url: "https://www.google.com/chrome/", description: "Web Browser", separator: COLON },

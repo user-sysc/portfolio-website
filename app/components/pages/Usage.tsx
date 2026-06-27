@@ -37,6 +37,7 @@ export default function Usage() {
                     height={17}
                     className="mr-2"
                     unoptimized
+                    style={{ width: "auto", height: "auto" }}
                   />
                   {item.name}
                 </RefLink>

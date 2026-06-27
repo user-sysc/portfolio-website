@@ -1,9 +1,9 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { Slide } from "@/app/animation/Slide";
 import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
 import { getProjectBySlug, getProjects } from "@/lib/data";
 import { siteConfig } from "@/config/site";
+import { projectIcons } from "@/data/projects";
 
 type Props = {
   params: Promise<{
@@ -99,15 +99,13 @@ export default async function ProjectPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="relative w-full h-40 pt-[52.5%]">
-            <Image
-              className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
-              fill
-              src={project.coverImage || fallbackImage}
-              alt={project.name}
-              quality={100}
-            />
-          </div>
+          {projectIcons[project.slug] ? (
+            <div className="flex items-center justify-center w-full h-48 dark:bg-primary-bg bg-zinc-50 rounded-xl border dark:border-zinc-800 border-zinc-100 mb-6">
+              <div className="dark:text-primary-color text-zinc-500 text-8xl">
+                {projectIcons[project.slug]}
+              </div>
+            </div>
+          ) : null}
 
           <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed whitespace-pre-line">
             {project.description}

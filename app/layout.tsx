@@ -47,6 +47,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${incognito.variable} ${gitlabmono.variable} ${inter.variable}`}
     >
       <body className="dark:bg-zinc-900 bg-white dark:text-white text-zinc-700 font-inter antialiased">

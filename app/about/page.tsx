@@ -71,9 +71,10 @@ export default async function About() {
                 src={profile.profileImage.image}
                 width={400}
                 height={400}
-                quality={100}
+                quality={75}
                 alt={profile.profileImage.alt}
                 placeholder="empty"
+                style={{ width: "auto", height: "auto" }}
               />
 
               <div className="flex flex-col text-center gap-y-4">
